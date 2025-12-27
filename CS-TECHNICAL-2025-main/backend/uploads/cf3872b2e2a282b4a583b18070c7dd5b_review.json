@@ -1,0 +1,24 @@
+{
+  "overall": {
+    "score": 92,
+    "label": "Excellent",
+    "out_of": 100
+  },
+  "breakdown": {
+    "skills_coverage": 95,
+    "structure_formatting": 90,
+    "clarity_impact": 92,
+    "regional_relevance": 80
+  },
+  "strengths": [
+    "Strong technical skills in DevOps, cloud infrastructure, and CI/CD pipelines",
+    "Excellent experience in automation, containerization, and agile methodologies",
+    "Good leadership and project management skills through volunteer experience"
+  ],
+  "areas_for_improvement": [
+    "Limited international experience, mostly focused on local companies and projects",
+    "Could benefit from more diverse certifications and training programs",
+    "Some sections, such as the summary, could be more concise and impactful"
+  ],
+  "notes": "The candidate has a strong technical background, with a good balance of skills and experience in DevOps, cloud computing, and cybersecurity. The resume is well-structured and easy to follow, with clear explanations of technical projects and experiences. However, there is room for improvement in terms of international experience and diversity of certifications."
+}

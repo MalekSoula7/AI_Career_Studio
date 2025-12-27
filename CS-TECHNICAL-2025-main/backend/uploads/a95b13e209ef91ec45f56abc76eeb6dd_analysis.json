@@ -1,0 +1,181 @@
+{
+  "structured": {
+    "candidate": {
+      "name": "Malek Soula",
+      "email": "soulamalek00@gmail.com",
+      "phone": "+216 96 663 984"
+    },
+    "skills_hard": [
+      "Git",
+      "Linux",
+      "Docker",
+      "Jenkins",
+      "Azure DevOps",
+      "Kubernetes",
+      "Java",
+      "Python",
+      "C",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "SQL",
+      "SpringBoot",
+      "NextJS",
+      "Oracle",
+      "PostgreSQL",
+      "SQL Server",
+      "AWS"
+    ],
+    "skills_soft": [
+      "problem solving",
+      "agile methodologies",
+      "public speaking",
+      "project management",
+      "team leading"
+    ],
+    "education": [
+      {
+        "institution": "Higher Institute Of Computer Science",
+        "degree": "Bachelor in Computer Science",
+        "field": "Computer Science",
+        "start_year": 2023,
+        "end_year": 2026,
+        "location": "Ariana, Tunisia"
+      },
+      {
+        "institution": "Borj Louzir High School",
+        "degree": "High School Degree in Computer Science",
+        "field": "Computer Science",
+        "start_year": null,
+        "end_year": 2023,
+        "location": "Ariana, Tunisia"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Performance Testing",
+        "company": "AXEFINANCE",
+        "location": "Tunis, Tunisia",
+        "start": "July 2025",
+        "end": "September 2025",
+        "bullets": [
+          "Conducted performance testing with JMeter and Python",
+          "Created a robust comparison framework to evaluate test results",
+          "Integrated performance validation in CI/CD pipelines"
+        ]
+      },
+      {
+        "title": "Web Security Internship",
+        "company": "SIBTEL",
+        "location": "Tunis, Tunisia",
+        "start": "July 2024",
+        "end": "August 2024",
+        "bullets": [
+          "Engineered a RESTful API incorporating OWASP guidelines and WS-Security standards",
+          "Implemented TLS Certification",
+          "Enhanced API security by developing custom security checklist"
+        ]
+      }
+    ],
+    "roles": [
+      "DevOps Engineer"
+    ],
+    "location": "Ariana, Tunisia",
+    "region": "MENA"
+  },
+  "review": {
+    "ats_score": 8,
+    "summary": "Strong technical skills in DevOps, cloud infrastructure, and cybersecurity, with experience in performance testing and web security.",
+    "strengths": [
+      "hands-on experience in automation and cloud infrastructure",
+      "strong understanding of cybersecurity principles and practices"
+    ],
+    "weaknesses": [
+      "limited experience in management and leadership roles",
+      "limited exposure to multiple industries and domains"
+    ],
+    "gaps": [
+      "need to develop skills in machine learning and artificial intelligence",
+      "need to gain experience in working with large-scale systems and architectures"
+    ],
+    "suggestions": [
+      "consider taking courses or certifications in machine learning and artificial intelligence",
+      "seek out opportunities to work on large-scale systems and architectures"
+    ]
+  },
+  "career_report": {
+    "summary": "Malek has a strong foundation in DevOps and cybersecurity, and is well-positioned to take on more senior roles in these areas.",
+    "six_month_focus": {
+      "headline": "Develop expertise in cloud security and machine learning",
+      "themes": [
+        "cloud security",
+        "machine learning",
+        "DevOps"
+      ],
+      "target_roles": [
+        "Cloud Security Engineer",
+        "DevOps Engineer"
+      ]
+    },
+    "target_roles": [
+      {
+        "role": "Cloud Security Engineer",
+        "fit_score": 9,
+        "why": "strong understanding of cybersecurity principles and practices, and experience in cloud infrastructure"
+      },
+      {
+        "role": "DevOps Engineer",
+        "fit_score": 8,
+        "why": "hands-on experience in automation and cloud infrastructure, and strong understanding of DevOps principles and practices"
+      }
+    ],
+    "skills_to_double_down": [
+      "cloud security",
+      "machine learning",
+      "DevOps"
+    ],
+    "skills_to_learn": [
+      "artificial intelligence",
+      "data science"
+    ],
+    "certifications": [
+      "AWS Certified Security - Specialty",
+      "Google Cloud Certified - Professional Cloud Developer"
+    ],
+    "learning_plan": [
+      {
+        "month": 1,
+        "focus": "cloud security",
+        "actions": [
+          "take online courses in cloud security",
+          "read books on cloud security"
+        ]
+      },
+      {
+        "month": 2,
+        "focus": "machine learning",
+        "actions": [
+          "take online courses in machine learning",
+          "work on machine learning projects"
+        ]
+      }
+    ],
+    "market_insights": {
+      "target_regions": [
+        "MENA",
+        "SSA"
+      ],
+      "hot_skills": [
+        "cloud security",
+        "machine learning",
+        "DevOps"
+      ],
+      "notes": "high demand for cloud security and machine learning skills in MENA and SSA regions"
+    },
+    "interview_tips": [
+      "be prepared to answer technical questions related to cloud security and machine learning",
+      "highlight experience and skills in DevOps and cybersecurity"
+    ],
+    "narrative_summary": "Malek is a highly skilled DevOps engineer with a strong foundation in cloud infrastructure and cybersecurity. With experience in performance testing and web security, he is well-positioned to take on more senior roles in these areas. To further develop his skills, Malek should focus on developing expertise in cloud security and machine learning, and seek out opportunities to work on large-scale systems and architectures."
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "structured": {
+    "candidate": {
+      "name": "Malek Soula",
+      "email": "soulamalek00@gmail.com",
+      "phone": "+216 96 663 984"
+    },
+    "skills_hard": [
+      "Git",
+      "Linux",
+      "Docker",
+      "Jenkins",
+      "Azure DevOps",
+      "Kubernetes",
+      "Java",
+      "Python",
+      "C",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "SQL",
+      "SpringBoot",
+      "NextJS",
+      "Oracle",
+      "PostgreSQL",
+      "SQL Server",
+      "AWS"
+    ],
+    "skills_soft": [
+      "Problem solving",
+      "Agile methodologies",
+      "Public speaking",
+      "Project management",
+      "Leadership"
+    ],
+    "education": [
+      {
+        "institution": "Higher Institute Of Computer Science",
+        "degree": "Bachelor in Computer Science",
+        "field": "Computer Science",
+        "start_year": 2023,
+        "end_year": 2026,
+        "location": "Ariana, Tunisia"
+      }
+    ],
+    "experience": [
+      {
+        "title": "DevOps Engineer",
+        "company": "AXEFINANCE",
+        "location": "Tunis, Tunisia",
+        "start": "July 2025",
+        "end": "September 2025",
+        "bullets": [
+          "Conducted performance testing with JMeter and Python",
+          "Created a robust comparison framework to evaluate test results",
+          "Integrated performance validation in CI/CD pipelines"
+        ]
+      },
+      {
+        "title": "Web Security Internship",
+        "company": "SIBTEL",
+        "location": "Tunis, Tunisia",
+        "start": "July 2024",
+        "end": "August 2024",
+        "bullets": [
+          "Engineered a RESTful API incorporating OWASP guidelines and WS-Security standards",
+          "Implemented TLS Certification",
+          "Enhanced API security by developing custom security checklist"
+        ]
+      }
+    ],
+    "roles": [
+      "DevOps Engineer",
+      "Web Security"
+    ],
+    "location": "Ariana, Tunisia",
+    "region": "MENA"
+  },
+  "review": {
+    "ats_score": 8,
+    "summary": "Strong technical skills in DevOps, cloud infrastructure, and cybersecurity",
+    "strengths": [
+      "Hands-on experience with automation and CI/CD pipelines",
+      "Strong understanding of cloud-native environments and security"
+    ],
+    "weaknesses": [
+      "Limited experience in certain cloud technologies",
+      "No direct experience with machine learning or artificial intelligence"
+    ],
+    "gaps": [
+      "Machine learning and AI",
+      "More experience with cloud technologies like GCP"
+    ],
+    "suggestions": [
+      "Take online courses to learn more about machine learning and AI",
+      "Gain more experience with cloud technologies like GCP"
+    ]
+  },
+  "career_report": {
+    "summary": "Malek Soula is a talented DevOps engineer with strong technical skills and a passion for cloud computing and cybersecurity",
+    "six_month_focus": {
+      "headline": "Deepen DevOps skills and explore cloud technologies",
+      "themes": [
+        "DevOps",
+        "Cloud Computing",
+        "Cybersecurity"
+      ],
+      "target_roles": [
+        "Cloud Engineer",
+        "DevOps Engineer",
+        "Cybersecurity Specialist"
+      ]
+    },
+    "target_roles": [
+      {
+        "role": "Cloud Engineer",
+        "fit_score": 8,
+        "why": "Strong technical skills in cloud infrastructure and DevOps"
+      }
+    ],
+    "skills_to_double_down": [
+      "DevOps",
+      "Cloud Computing",
+      "Cybersecurity"
+    ],
+    "skills_to_learn": [
+      "Machine learning",
+      "Artificial intelligence",
+      "GCP"
+    ],
+    "certifications": [
+      "AWS Certified DevOps Engineer",
+      "Google Cloud Certified - Professional Cloud Developer"
+    ],
+    "learning_plan": [
+      {
+        "month": 1,
+        "focus": "DevOps and cloud computing",
+        "actions": [
+          "Take online courses to learn more about DevOps and cloud computing",
+          "Gain more experience with cloud technologies like AWS and Azure"
+        ]
+      },
+      {
+        "month": 2,
+        "focus": "Cybersecurity",
+        "actions": [
+          "Take online courses to learn more about cybersecurity",
+          "Participate in bug bounty programs to gain experience"
+        ]
+      },
+      {
+        "month": 3,
+        "focus": "Machine learning and AI",
+        "actions": [
+          "Take online courses to learn more about machine learning and AI",
+          "Participate in machine learning competitions to gain experience"
+        ]
+      }
+    ],
+    "market_insights": {
+      "target_regions": [
+        "MENA",
+        "SSA"
+      ],
+      "hot_skills": [
+        "Cloud computing",
+        "Cybersecurity",
+        "DevOps"
+      ],
+      "notes": "The demand for cloud computing and cybersecurity professionals is increasing in MENA and SSA regions"
+    },
+    "interview_tips": [
+      "Be prepared to talk about your experience with DevOps and cloud computing",
+      "Showcase your understanding of cybersecurity and machine learning"
+    ],
+    "narrative_summary": "As a DevOps engineer with a passion for cloud computing and cybersecurity, Malek Soula has a strong foundation to build a successful career in the tech industry. With a focus on deepening his DevOps skills and exploring cloud technologies, he can increase his chances of landing a role as a Cloud Engineer or DevOps Engineer in the MENA or SSA regions."
+  }
+}

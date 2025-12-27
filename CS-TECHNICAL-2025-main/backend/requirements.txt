@@ -1,0 +1,16 @@
+Flask
+flask-cors
+requests
+beautifulsoup4
+cryptography
+flask_limiter
+flask_talisman
+flask_socketio
+python-socketio
+passlib[bcrypt]
+utils
+typing
+uuid
+flask_jwt_extended
+pymongo
+openai
