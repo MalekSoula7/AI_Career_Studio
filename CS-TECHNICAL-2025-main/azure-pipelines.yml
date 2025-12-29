@@ -1,0 +1,164 @@
+trigger:
+- main
+
+variables:
+  azureServiceConnectionId: '0a45df8b-2c1f-475c-8068-180bbfec7455'
+  backWebAppName: 'AICareerStudio'
+  frontWebAppName: 'AiCareerStudioFr'
+  environmentName: 'AICareerStudio'
+  pythonVersion: '3.11'
+
+stages:
+# ---------------- BACKEND BUILD ----------------
+- stage: Build_Backend_Flask_App
+  displayName: Build Backend stage
+  jobs:
+  - job: Build_Backend
+    pool:
+      name: malek
+      demands:
+      - Agent.Name -equals AgentMalek
+    steps:
+    - checkout: self
+
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '$(pythonVersion)'
+      displayName: 'Use Python $(pythonVersion)'
+
+    - script: |
+        python -m ensurepip --upgrade
+        python -m pip install --upgrade pip
+        python -m pip install -r "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\backend\requirements.txt"
+      displayName: Install backend requirements
+
+    - task: ArchiveFiles@2
+      displayName: Archive backend
+      inputs:
+        rootFolderOrFile: '$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\backend'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)\backend.zip'
+        replaceExistingArchive: true
+
+    - task: PublishPipelineArtifact@1
+      displayName: Publish backend.zip
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)\backend.zip'
+        artifact: backend
+        publishLocation: pipeline
+
+# ---------------- FRONTEND BUILD ----------------
+- stage: Build_Frontend_Next_App
+  displayName: Build Front stage
+  jobs:
+  - job: Build_Frontend
+    pool:
+      name: malek
+      demands:
+      - Agent.Name -equals AgentMalek
+    steps:
+    - checkout: self
+
+    - task: UseNode@1
+      inputs:
+        version: '20.x'
+      displayName: Install Node.js
+
+    - script: |
+        cd /d "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend"
+        npm ci
+        npm run build
+      displayName: Build Next.js
+
+    # NEW: create a deploy folder that explicitly includes .next
+    - script: |
+        rmdir /s /q "$(Build.ArtifactStagingDirectory)\frontend_deploy" 2>nul
+        mkdir "$(Build.ArtifactStagingDirectory)\frontend_deploy"
+
+        REM 1) Copy standalone server output so server.js is at zip root
+        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\.next\standalone" "$(Build.ArtifactStagingDirectory)\frontend_deploy"
+
+        REM 2) Copy Next static assets into standalone/.next/static
+        mkdir "$(Build.ArtifactStagingDirectory)\frontend_deploy\.next" 2>nul
+        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\.next\static" "$(Build.ArtifactStagingDirectory)\frontend_deploy\.next\static"
+
+        REM 3) Copy public/ into standalone/public
+        if exist "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\public" (
+          xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\public" "$(Build.ArtifactStagingDirectory)\frontend_deploy\public"
+        )
+      displayName: Prepare frontend deploy folder (standalone)
+
+    - task: ArchiveFiles@2
+      displayName: Archive frontend
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)\frontend_deploy'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)\frontend.zip'
+        replaceExistingArchive: true
+
+    - task: PublishPipelineArtifact@1
+      displayName: Publish frontend.zip
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)\frontend.zip'
+        artifact: frontend
+        publishLocation: pipeline
+
+# ---------------- DEPLOY ----------------
+- stage: Deploy
+  displayName: Deploy Web Apps
+  dependsOn:
+  - Build_Backend_Flask_App
+  - Build_Frontend_Next_App
+  condition: succeeded()
+  jobs:
+  - deployment: Deploy_Frontend
+    displayName: Deploy Next.js Web App
+    pool:
+      name: malek
+      demands:
+      - Agent.Name -equals AgentMalek
+    environment: $(environmentName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              artifact: frontend
+              path: '$(Pipeline.Workspace)\frontend'
+            displayName: Download frontend artifact
+
+          - task: AzureWebApp@1
+            displayName: Deploy Azure Web App (Frontend)
+            inputs:
+              azureSubscription: $(azureServiceConnectionId)
+              appType: webAppLinux
+              appName: $(frontWebAppName)
+              package: '$(Pipeline.Workspace)\frontend\frontend.zip'
+
+  - deployment: Deploy_Backend
+    displayName: Deploy Flask Web App
+    pool:
+      name: malek
+      demands:
+      - Agent.Name -equals AgentMalek
+    environment: $(environmentName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              artifact: backend
+              path: '$(Pipeline.Workspace)\backend'
+            displayName: Download backend artifact
+
+          - task: AzureWebApp@1
+            displayName: Deploy Azure Web App (Backend)
+            inputs:
+              azureSubscription: $(azureServiceConnectionId)
+              appType: webAppLinux
+              appName: $(backWebAppName)
+              package: '$(Pipeline.Workspace)\backend\backend.zip'
