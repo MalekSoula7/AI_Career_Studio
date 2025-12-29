@@ -77,11 +77,11 @@ stages:
         mkdir "$(Build.ArtifactStagingDirectory)\frontend_deploy"
 
         REM 1) Copy standalone server output so server.js is at zip root
-        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\.next\standalone" "$(Build.ArtifactStagingDirectory)\frontend_deploy"
+        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\" "$(Build.ArtifactStagingDirectory)\frontend_deploy"
 
         REM 2) Copy Next static assets into standalone/.next/static
         mkdir "$(Build.ArtifactStagingDirectory)\frontend_deploy\.next" 2>nul
-        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\.next\static" "$(Build.ArtifactStagingDirectory)\frontend_deploy\.next\static"
+        xcopy /E /I /Y "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\" "$(Build.ArtifactStagingDirectory)\frontend_deploy\.next\static"
 
         REM 3) Copy public/ into standalone/public
         if exist "$(Build.SourcesDirectory)\CS-TECHNICAL-2025-main\frontend\public" (
