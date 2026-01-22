@@ -1,4 +1,4 @@
-# CS-TECHNICAL-2025
+# AICareerStudio
 
 A full‑stack employability assistant that helps candidates:
 - Upload resumes securely (encrypted at rest) and extract structured data
